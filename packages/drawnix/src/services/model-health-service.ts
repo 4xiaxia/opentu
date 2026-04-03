@@ -227,8 +227,8 @@ export function buildHealthMap(
 }
 
 /**
- * 检查 baseUrl 是否为 tu-zi.com
+ * 检查 baseUrl 是否为 ujiapp.com
  */
 export function isTuziApiUrl(baseUrl: string): boolean {
-    return baseUrl.includes('api.tu-zi.com');
+    return baseUrl.includes('api.ujiapp.com');
 }

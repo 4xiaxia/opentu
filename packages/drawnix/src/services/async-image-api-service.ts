@@ -48,7 +48,7 @@ class AsyncImageAPIService {
   private baseUrl: string;
 
   constructor() {
-    this.baseUrl = 'https://api.tu-zi.com';
+    this.baseUrl = 'https://api.ujiapp.com';
   }
 
   private async submit(

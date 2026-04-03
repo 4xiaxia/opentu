@@ -54,7 +54,7 @@ export const BUILT_IN_TOOLS: ToolDefinition[] = [
     description: 'ChatGPT Web 聊天界面，支持 Midjourney 绘图代理',
     icon: React.createElement(MessageIcon),
     category: ToolCategory.AI_TOOLS,
-    url: 'https://chat.innk.cc/#/?settings={"key":"${apiKey}","url":"https://api.tu-zi.com"}',
+    url: 'https://chat.innk.cc/#/?settings={"key":"${apiKey}","url":"https://api.ujiapp.com"}',
     defaultWidth: 1000,
     defaultHeight: 700,
     permissions: [

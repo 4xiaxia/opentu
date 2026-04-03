@@ -5,6 +5,7 @@ import {
   MenuIcon,
   RedoIcon,
   UndoIcon,
+  SettingsIcon,
 } from '../../icons';
 import classNames from 'classnames';
 import {
@@ -15,7 +16,6 @@ import { Island } from '../../island';
 import { Popover, PopoverContent, PopoverTrigger } from '../../popover/popover';
 import { useState } from 'react';
 import { CleanBoard, OpenFile, SaveAsImage, SaveToFile, Settings, BackupRestore, CloudSync, DebugPanel, QuickCommands, UserManual, VersionInfo, CleanInvalidLinks } from './app-menu-items';
-import { GithubIcon } from '../../icons';
 import { LanguageSwitcherMenu } from './language-switcher-menu';
 import Menu from '../../menu/menu';
 import MenuSeparator from '../../menu/menu-separator';
@@ -24,6 +24,7 @@ import { Z_INDEX } from '../../../constants/z-index';
 import { ToolbarSectionProps } from '../toolbar.types';
 import { useToolbarConfig } from '../../../hooks/use-toolbar-config';
 import { ToolbarContextMenu } from '../toolbar-context-menu';
+import { useDrawnix } from '../../../hooks/use-drawnix';
 
 export interface AppToolbarProps extends ToolbarSectionProps {
   onOpenBackupRestore?: () => void;
@@ -39,6 +40,7 @@ export const AppToolbar: React.FC<AppToolbarProps> = ({
   const board = useBoard();
   const { t } = useI18n();
   const { isButtonVisible, visibleButtons } = useToolbarConfig();
+  const { setAppState } = useDrawnix();
   const container = PlaitBoard.getBoardContainer(board);
   const [appMenuOpen, setAppMenuOpen] = useState(false);
   const isUndoDisabled = board.history.undos.length <= 0;
@@ -166,14 +168,14 @@ export const AppToolbar: React.FC<AppToolbarProps> = ({
         {content}
         <ToolButton
           type="icon"
-          icon={<GithubIcon />}
+          icon={<SettingsIcon />}
           visible={true}
-          title={t('menu.github')}
+          title="API 配置"
           tooltipPlacement="right"
-          aria-label={t('menu.github')}
-          data-track="toolbar_click_github"
+          aria-label="API 配置"
+          data-track="toolbar_click_api_settings"
           onPointerUp={() => {
-            window.open('https://github.com/ljquan/aitu', '_blank');
+            setAppState(prev => ({ ...prev, openSettings: true }));
           }}
         />
       </div>

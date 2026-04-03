@@ -41,7 +41,7 @@ export const SettingsDialog = ({
     if (appState.openSettings) {
       const config = geminiSettings.get();
       setApiKey(config.apiKey || '');
-      setBaseUrl(config.baseUrl || 'https://api.tu-zi.com/v1');
+      setBaseUrl(config.baseUrl || 'https://api.ujiapp.com/v1');
       setImageModelName(config.imageModelName || getDefaultImageModel());
       setVideoModelName(config.videoModelName || getDefaultVideoModel());
       setTextModelName(config.textModelName || getDefaultTextModel());
@@ -55,7 +55,7 @@ export const SettingsDialog = ({
 
   const handleSave = async () => {
     const trimmedApiKey = apiKey.trim();
-    const trimmedBaseUrl = baseUrl.trim() || 'https://api.tu-zi.com/v1';
+    const trimmedBaseUrl = baseUrl.trim() || 'https://api.ujiapp.com/v1';
     const trimmedImageModel = imageModelName.trim() || getDefaultImageModel();
     const trimmedVideoModel = videoModelName.trim() || getDefaultVideoModel();
     const trimmedTextModel = textModelName.trim() || getDefaultTextModel();
@@ -108,12 +108,12 @@ export const SettingsDialog = ({
                     您可以从以下地址获取 API Key:
                     <br />
                     <a
-                      href="https://api.tu-zi.com/token"
+                      href="https://api.ujiapp.com/token"
                       target="_blank"
                       rel="noopener noreferrer"
                       style={{ color: '#F39C12', textDecoration: 'none' }}
                     >
-                      api.tu-zi.com/token
+                      api.ujiapp.com/token
                     </a>
                     <br />
                     <a
@@ -161,7 +161,7 @@ export const SettingsDialog = ({
               className="settings-dialog__input"
               value={baseUrl}
               onChange={(e) => setBaseUrl(e.target.value)}
-              placeholder="https://api.tu-zi.com/v1"
+              placeholder="https://api.ujiapp.com/v1"
             />
           </div>
           <div className="settings-dialog__field">

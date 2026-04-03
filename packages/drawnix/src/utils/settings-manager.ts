@@ -33,7 +33,7 @@ export interface AppSettings {
 const DEFAULT_SETTINGS: AppSettings = {
   gemini: {
     apiKey: '',
-    baseUrl: 'https://api.tu-zi.com/v1',
+    baseUrl: 'https://api.ujiapp.com/v1',
     chatModel: 'gpt-5',
     imageModelName: 'gemini-3-pro-image-preview-vip',
     videoModelName: 'veo3.1',

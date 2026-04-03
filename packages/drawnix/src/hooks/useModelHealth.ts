@@ -2,7 +2,7 @@
  * 模型健康状态 Hook
  * 
  * 提供模型健康状态数据，支持自动刷新
- * 仅当 baseUrl 为 api.tu-zi.com 时才启用
+ * 仅当 baseUrl 为 api.ujiapp.com 时才启用
  */
 
 import { useState, useEffect, useCallback, useRef } from 'react';

@@ -9,7 +9,6 @@ import React from 'react';
 import { Badge } from 'tdesign-react';
 import { ToolButton } from '../tool-button';
 import { useTaskQueue } from '../../hooks/useTaskQueue';
-import { FeedbackButton } from '../feedback-button/feedback-button';
 import { FolderIcon, ToolboxIcon, TaskIcon } from '../icons';
 import './bottom-actions-section.scss';
 
@@ -46,9 +45,6 @@ export const BottomActionsSection: React.FC<BottomActionsSectionProps> = ({
 
   return (
     <div className="bottom-actions-section">
-      {/* 反馈按钮 */}
-      <FeedbackButton />
-
       {/* 打开项目按钮 - 使用 ToolButton */}
       <ToolButton
         type="icon"

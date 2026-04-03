@@ -833,14 +833,14 @@ export class FallbackMediaExecutor implements IMediaExecutor {
     return {
       geminiConfig: {
         apiKey: settings.apiKey,
-        baseUrl: settings.baseUrl || 'https://api.tu-zi.com/v1',
+        baseUrl: settings.baseUrl || 'https://api.ujiapp.com/v1',
         modelName: settings.chatModel || 'gemini-2.0-flash',
         textModelName: settings.textModelName,
       },
       videoConfig: {
         apiKey: settings.apiKey,
         // 规范化 baseUrl，移除尾部 / 或 /v1，便于拼接 /v1/videos
-        baseUrl: this.normalizeApiBase(settings.baseUrl || 'https://api.tu-zi.com'),
+        baseUrl: this.normalizeApiBase(settings.baseUrl || 'https://api.ujiapp.com'),
       },
     };
   }
